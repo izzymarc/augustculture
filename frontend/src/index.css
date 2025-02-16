@@ -1,53 +1,449 @@
-/* Existing CSS ... */
-
-/* Shop Page Add to Cart Button */
-.add-to-cart-button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 3px;
+/* Global Styles */
+body {
   font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f8f8f8;
 }
 
-.add-to-cart-button:hover {
-  background-color: #222;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Shop Page Product Details */
-.product-details {
-  margin-top: 20px;
+.content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.product-details p {
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #282828;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 25px;
+}
+
+header nav ul li:first-child {
+  margin-left: 0;
+}
+
+header nav ul li a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 30px;
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #eee;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section (Homepage) */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Fixed height for hero section */
+  position: relative;
+  overflow: hidden; /* Ensure background doesn't bleed out */
+  margin-bottom: 2em;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.hero-section > * {
+  position: relative; /* Ensure text and button are above overlay */
+  z-index: 1;
+}
+
+
+.hero-section h2 {
+  font-size: 3em;
+  color: white;
   margin-bottom: 10px;
 }
 
-.product-details .price {
+.hero-section p {
+  color: #eee;
   font-size: 1.2em;
-  font-weight: 600;
-  color: #282828;
+  max-width: 700px;
+  margin-bottom: 30px;
 }
 
-/* Basic Cart Preview Styling */
-.cart-preview {
-  margin-top: 50px;
-  padding: 20px;
-  border: 1px solid #eee;
+.shop-now-button, .learn-more-button, .submit-button, .add-to-cart-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
   border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-decoration: none; /* Ensure no underline if used as a link */
+  display: inline-block; /* Correctly apply padding and margin */
+}
+
+
+.shop-now-button:hover, .learn-more-button:hover, .submit-button:hover, .add-to-cart-button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+
+/* Featured Collection & Brand Story (Homepage) */
+.featured-collection, .brand-story-section {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.featured-collection h2, .brand-story-section h2 {
+  margin-bottom: 20px;
+}
+
+.section-description {
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.product-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.product-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove bottom gap under image */
+}
+
+.product-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push meta to the bottom */
+  flex-grow: 1; /* Allow details to take available space */
+}
+
+
+.product-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.product-details .description {
+  color: #666;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Description takes up available space */
+}
+
+.product-details .price {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-meta {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+
+/* About Page */
+.about-page {
+  padding: 30px 20px;
+}
+
+.about-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-page p {
+  margin-bottom: 20px;
+}
+
+.about-page ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.founder-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.founder-info {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.founder-image {
+  border-radius: 50%;
+  margin-right: 30px;
+  max-width: 120px;
+}
+
+.founder-text {
+  text-align: left;
+}
+
+.founder-text h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+
+/* Contact Page */
+.contact-page {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contact-page h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: inherit;
+  box-sizing: border-box; /* Important for padding and border to be inside the width */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  align-self: center;
+  margin-top: 20px;
+}
+
+.contact-page address {
+  margin-top: 30px;
+  color: #777;
+  line-height: 1.7;
+}
+.contact-page address a {
+  color: #007bff; /* Or any color you prefer for links */
+  text-decoration: none; /* Removes underline */
+}
+
+.contact-page address a:hover {
+  text-decoration: underline; /* Adds underline on hover for better UX */
+}
+
+
+/* Lookbook Page */
+.lookbook-page {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.lookbook-page h2 {
+  margin-bottom: 20px;
+}
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.lookbook-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.lookbook-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+
+.lookbook-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lookbook-caption {
+  padding: 20px;
+  text-align: left;
+  background-color: #fff;
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+
+/* Shop Page Styles */
+.shop-page {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.shop-page h2 {
+  margin-bottom: 20px;
+}
+
+
+/* Cart Preview Styles */
+.cart-preview {
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: left;
 }
 
 .cart-preview h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  color: #444;
+  font-size: 1.6em;
+  margin-top: 0;
   margin-bottom: 15px;
   text-align: center;
+  color: #444;
 }
 
 .cart-preview ul {
@@ -56,10 +452,70 @@
 }
 
 .cart-preview ul li {
-  padding: 8px 0;
-  border-bottom: 1px dotted #ccc;
+  padding: 10px 0;
+  border-bottom: 1px dotted #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cart-preview ul li:last-child {
   border-bottom: none;
+}
+
+.cart-total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #eee;
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  header h1 {
+    margin-bottom: 10px;
+  }
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav ul li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .hero-section {
+    padding: 80px 20px;
+    height: auto; /* Adjust height for smaller screens */
+  }
+  .hero-section h2 {
+    font-size: 2.5em;
+  }
+  .hero-section p {
+    font-size: 1.1em;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .founder-info {
+    flex-direction: column;
+  }
+  .founder-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
 }
