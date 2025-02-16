@@ -176,7 +176,7 @@ header nav ul li a.active::after {
   transition: opacity 0.3s ease;
 }
 
-.cart-icon-link:hover {
+.cart-icon-link:hover .cart-icon {
   opacity: 1;
 }
 
@@ -255,46 +255,17 @@ footer {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-/* Hero Content Styling */
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-content h2 {
-  font-size: 4em;
-  color: var(--background-color);
-  margin-bottom: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  line-height: 1.05;
-  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
-}
-
-.hero-content p {
-  color: #eee;
-  font-size: 1.35em;
-  max-width: 880px;
-  margin-bottom: 55px;
-  line-height: 1.7;
-  font-weight: 300;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.shop-now-button,
-.learn-more-button,
-.submit-button,
-.add-to-cart-button {
-  background-color: var(--background-color);
-  color: var(--primary-color);
+.shop-now-button, .learn-more-button, .submit-button, .add-to-cart-button {
+  background-color: var(--background-color); /* Off-white button background now */
+  color: var(--primary-color); /* Dark text */
   border: 2px solid var(--primary-color);
-  padding: 15px 38px;
+  padding: 15px 38px; /* Slightly tweaked button padding */
   border-radius: 50px;
   font-family: var(--font-family-base);
-  font-size: 1.05em;
+  font-size: 1.05em; /* Slightly tweaked button text size */
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added subtle base shadow */
   text-decoration: none;
   display: inline-block;
   font-weight: 400;
@@ -302,27 +273,22 @@ footer {
   outline: none;
 }
 
-.shop-now-button:hover,
-.learn-more-button:hover,
-.submit-button:hover,
-.add-to-cart-button:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
+.shop-now-button:hover, .learn-more-button:hover, .submit-button:hover, .add-to-cart-button:hover {
+  background-color: var(--primary-color); /* Dark background on hover */
+  color: var(--background-color); /* Off-white text on hover */
   border-color: var(--primary-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Slightly stronger shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 
 /* Featured Collection & Brand Story (Homepage) - Modernized - Polish */
-.featured-collection,
-.brand-story-section {
+.featured-collection, .brand-story-section {
   padding: 70px 0; /* Further Increased padding for more visual space */
   text-align: center;
 }
 
-.featured-collection h2,
-.brand-story-section h2 {
+.featured-collection h2, .brand-story-section h2 {
   margin-bottom: 30px;
   font-size: 2.7em; /* Slightly smaller section titles */
   font-weight: 500;
@@ -341,97 +307,84 @@ footer {
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Adjust minmax value if needed - this makes grid responsive */
-  gap: 35px; /* Gap between grid items */
-  padding: 30px; /* Padding around the grid */
-  max-width: 1200px; /* Maximum width of the grid container */
-  margin: 0 auto; /* Center the grid on the page */
-  /* Ensure grid items flow correctly and prevent overlap */
-  grid-auto-flow: row dense; /* Helps in filling gaps and ordering items */
-  align-items: start; /* Align items to the start of the grid cell */
-  justify-items: stretch; /* Stretch items to fill the width of the grid cell */
-  /* IMPORTANT: Ensure grid items take full width and handle wrapping */
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Slightly wider product items */
+  gap: 35px; /* Increased gap between product items */
+  padding: 30px; /* Increased padding around product grid */
+  max-width: 1200px; /* Ensure grid stays within content max-width */
+  margin: 0 auto;    /* Center the grid on the page */
 }
+
 
 .product-item {
   background-color: var(--background-color);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.07); /* Subtle shadow for product items */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 9px rgba(0,0,0,0.07); /* Slightly stronger shadow for product items */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; /* Stack product image and details vertically */
-  width: 100%; /* Ensure product item takes full width of its grid cell */
-  max-width: 100%; /* Ensure it doesn't exceed its container */
-  box-sizing: border-box; /* Include padding and border in the item's total width and height */
+  flex-direction: column;
+  /* Ensure product items take full width of their grid cell */
+  width: 100%;
 }
 
 .product-item:hover {
-  transform: translateY(-4px); /* Slight vertical lift on hover */
-  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.14); /* More pronounced shadow on hover */
+  transform: translateY(-4px); /* Slightly more pronounced hover translation */
+  box-shadow: 0 9px 18px rgba(0,0,0,0.14); /* Slightly stronger hover shadow */
 }
 
 .product-item img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px 12px 0 0; /* Rounded corners at the top of the image */
-  transition: opacity 0.3s ease; /* Smooth opacity transition on hover */
-  /* Ensure image does not cause overflow and is responsive */
-  max-width: 100%;
-  height: auto;
-  object-fit: cover; /* cover container, cropping if necessary */
+  border-radius: 12px 12px 0 0;
+  transition: opacity 0.3s ease;
 }
 
 .product-item img:hover {
   opacity: 0.92; /* Slightly less faded image on hover */
 }
 
+
 .product-details {
-  padding: 25px; /* Padding inside product details section */
+  padding: 25px; /* Slightly increased padding in product details */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute space between details and button */
-  flex-grow: 1; /* Allow details to take up available space */
-  width: 100%; /* Ensure product details take full width */
-  box-sizing: border-box; /* Ensure padding is included in width */
+  justify-content: space-between;
+  flex-grow: 1;
+  /* Ensure product details also take full width */
+  width: 100%;
 }
 
 .product-item h3 {
   margin-top: 0;
-  margin-bottom: 12px; /* Spacing below product name */
-  font-size: 1.5em; /* Product name font size */
+  margin-bottom: 12px; /* Slightly reduced margin below product name */
+  font-size: 1.5em; /* Slightly smaller product name */
   font-weight: 400;
   color: var(--primary-color);
-  /* Prevent text from overflowing its container */
-  overflow-wrap: break-word; /* or use 'word-break: break-all;' if necessary */
 }
 
 .product-details .description {
   color: var(--secondary-color);
-  margin-bottom: 18px; /* Spacing below description */
-  flex-grow: 1; /* Allow description to grow and take space */
+  margin-bottom: 18px; /* Slightly reduced margin below description */
+  flex-grow: 1;
   font-size: 1em;
-  line-height: 1.6; /* Line height for description */
+  line-height: 1.6; /* Slightly tighter line height for description */
   font-weight: 300;
-  /* Prevent text from overflowing */
-  overflow-wrap: break-word; /* or use 'word-break: break-all;' if necessary */
 }
 
 .product-details .price {
-  font-size: 1.3em; /* Price font size */
+  font-size: 1.3em; /* Slightly smaller price text */
   font-weight: 500;
   color: var(--primary-color);
-  margin-bottom: 18px; /* Spacing below price */
+  margin-bottom: 18px; /* Slightly reduced margin below price */
 }
 
 .product-meta {
-  font-size: 0.85em; /* Meta text size (sizes, materials) */
-  color: #888; /* Meta text color */
-  margin-top: 10px; /* Spacing above meta info */
-  border-top: 1px solid #f0f0f0; /* Light border above meta info */
-  padding-top: 10px; /* Padding above meta info */
+  font-size: 0.85em; /* Slightly smaller meta text */
+  color: #888; /* Slightly lighter meta color */
+  margin-top: 10px; /* Slightly increased margin above meta */
+  border-top: 1px solid #f0f0f0; /* Lighter border color */
+  padding-top: 10px; /* Slightly increased padding above meta */
 }
 
 /* Add to Cart Button - Modern */
@@ -439,23 +392,23 @@ footer {
   background-color: var(--accent-color);
   color: var(--background-color);
   border: none;
-  padding: 11px 28px; /* Button padding */
-  border-radius: 40px; /* Rounded corners for button */
+  padding: 11px 28px; /* Further reduced button padding */
+  border-radius: 40px; /* Even less rounded button */
   font-family: var(--font-family-base);
-  font-size: 0.9em; /* Button text size */
+  font-size: 0.9em; /* Even smaller button text */
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Button transition effects */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06); /* Subtle button shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); /* Even more subtle shadow */
   font-weight: 400;
   letter-spacing: 0.02em;
   outline: none;
-  margin-top: 12px; /* Spacing above button */
+  margin-top: 12px; /* Slightly reduced margin above button */
 }
 
 .add-to-cart-button:hover {
   background-color: var(--accent-hover-color);
-  transform: translateY(-1px); /* Slight vertical movement on hover */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Slightly more pronounced shadow on hover */
+  transform: translateY(-1px); /* Reduced hover translation */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Even more subtle hover shadow */
 }
 
 
@@ -832,4 +785,45 @@ footer {
     margin-right: 0; /* Reset margin for mobile */
   }
   header nav ul {
-    flex-direction: column
+    flex-direction: column;
+    align-items: center;
+  }
+  header nav ul li {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  header nav ul li a {
+    font-size: 1em;
+  }
+
+  .hero-section {
+    padding: 150px 20px;
+  }
+  .hero-section h2 {
+    font-size: 3.2em;
+  }
+  .hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .product-details {
+    padding: 20px;
+  }
+  .product-item h3 {
+    font-size: 1.5em;
+  }
+  .product-details .price {
+    font-size: 1.3em;
+  }
+
+  .founder-info {
+    flex-direction: column;
+    padding: 30px;
+  }
