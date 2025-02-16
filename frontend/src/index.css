@@ -1,0 +1,65 @@
+/* Existing CSS ... */
+
+/* Shop Page Add to Cart Button */
+.add-to-cart-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #222;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Shop Page Product Details */
+.product-details {
+  margin-top: 20px;
+}
+
+.product-details p {
+  margin-bottom: 10px;
+}
+
+.product-details .price {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #282828;
+}
+
+/* Basic Cart Preview Styling */
+.cart-preview {
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.cart-preview h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cart-preview ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-preview ul li {
+  padding: 8px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.cart-preview ul li:last-child {
+  border-bottom: none;
+}

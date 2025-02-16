@@ -1,0 +1,15 @@
+{
+  "name": "august-culture-website",
+  "version": "1.0.0",
+  "description": "Full-stack website for August Culture Limited",
+  "scripts": {
+    "dev": "node backend/server.js",
+    "start": "node backend/server.js",
+    "build": "npm run build --prefix frontend",
+    "install-frontend": "npm install --prefix frontend",
+    "install-backend": "npm install --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
