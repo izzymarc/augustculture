@@ -87,6 +87,7 @@ header h1 {
   font-size: 2em; /* Slightly reduced header title size */
   font-weight: 500;
   letter-spacing: -0.02em;
+  margin-right: 40px; /* Added margin to the right of the logo */
 }
 
 header nav ul {
@@ -145,12 +146,12 @@ header nav ul li a.active::after {
   align-items: center;
   color: var(--primary-color);
   transition: color 0.3s ease;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
+  background: none; /* Remove default button background */
+  border: none;     /* Remove default button border */
+  cursor: pointer;  /* Ensure it's a button cursor */
+  padding: 0;       /* Reset padding */
+  font-size: inherit; /* Inherit font size */
+  font-family: inherit;/* Inherit font family */
 }
 
 .cart-icon-link:hover {
@@ -739,7 +740,7 @@ footer {
 
 /* Cart Preview Styles - Modernized */
 .cart-preview {
-  margin-top: 60px;
+  margin-top: 60px; /* Adjust if Cart component is still used elsewhere */
   padding: 35px;
   border: 1px solid var(--light-gray);
   border-radius: 12px;
@@ -801,6 +802,7 @@ footer {
   header h1 {
     margin-bottom: 15px;
     font-size: 2em;
+    margin-right: 0; /* Reset margin for mobile */
   }
   header nav ul {
     flex-direction: column;
