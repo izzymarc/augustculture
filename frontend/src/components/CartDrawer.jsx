@@ -1,12 +1,39 @@
 import React from 'react';
 
-function CartDrawer({ cart, onClose, isOpen }) {
+function CartDrawer({ cart, onClose, isOpen, setCart }) { // Added setCart prop
+
   if (!isOpen) {
     return null;
   }
 
+  const incrementQuantity = (item) => {
+    const updatedCart = cart.map(cartItem => {
+      if (cartItem.id === item.id) {
+        return { ...cartItem, quantity: (cartItem.quantity || 1) + 1 };
+      }
+      return cartItem;
+    });
+    setCart(updatedCart);
+  };
+
+  const decrementQuantity = (item) => {
+    const updatedCart = cart.map(cartItem => {
+      if (cartItem.id === item.id) {
+        return { ...cartItem, quantity: Math.max(1, (cartItem.quantity || 1) - 1) }; // Ensure quantity doesn't go below 1
+      }
+      return cartItem;
+    });
+    setCart(updatedCart);
+  };
+
+  const removeItem = (itemToRemove) => {
+    const updatedCart = cart.filter(item => item.id !== itemToRemove.id);
+    setCart(updatedCart);
+  };
+
+
   return (
-    <div className="cart-drawer">
+    <div className="cart-drawer open"> {/* Added "open" class directly for now for easier testing */}
       <div className="cart-drawer-header">
         <h3>Shopping Cart</h3>
         <button className="cart-drawer-close-button" onClick={onClose}>
@@ -26,14 +53,23 @@ function CartDrawer({ cart, onClose, isOpen }) {
                   <span className="item-name">{item.name}</span>
                   <span className="item-price">${item.price}</span>
                 </div>
-                {/* Add quantity adjust and remove later */}
+                <div className="item-quantity-controls">
+                  <button className="quantity-button" onClick={() => decrementQuantity(item)}>-</button>
+                  <span className="item-quantity">{(item.quantity || 1)}</span>
+                  <button className="quantity-button" onClick={() => incrementQuantity(item)}>+</button>
+                </div>
+                <button className="remove-item-button" onClick={() => removeItem(item)}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.5 5.25a.75.75 0 000 1.5h9a.75.75 0 000-1.5h-9z" clipRule="evenodd" />
+                  </svg>
+                </button>
               </li>
             ))}
           </ul>
         )}
         {cart.length > 0 && (
           <div className="cart-total">
-            <strong>Total: ${cart.reduce((total, item) => total + item.price, 0)}</strong>
+            <strong>Total: ${cart.reduce((total, item) => total + item.price * (item.quantity || 1), 0)}</strong>
           </div>
         )}
       </div>

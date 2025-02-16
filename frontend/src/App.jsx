@@ -7,6 +7,7 @@ import LookbookPage from './pages/LookbookPage';
 import ContactPage from './pages/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ProductDetailPage from './pages/ProductDetailPage'; // Import ProductDetailPage
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/shop" element={<ShopPage />} />
+          <Route path="/shop/products/:productId" element={<ProductDetailPage />} /> {/* Product Detail Page Route */}
           <Route path="/lookbook" element={<LookbookPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>

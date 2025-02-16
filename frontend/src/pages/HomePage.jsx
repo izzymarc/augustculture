@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect
-import ProductItem from '../components/ProductItem'; // Import ProductItem
+import React, { useState, useEffect } from 'react';
+import ProductItem from '../components/ProductItem';
 
 function HomePage() {
-  const [products, setProducts] = useState([]); // State to hold products
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch('/api/products')
@@ -11,16 +11,19 @@ function HomePage() {
       .catch(error => console.error("Error fetching products:", error));
   }, []);
 
-  // Function to get featured products (for now, just first 3)
+  // Function to get a random subset of featured products
   const getFeaturedProducts = () => {
-    return products.slice(0, 3); // Get the first 3 products as featured
+    if (products.length < 3) {
+      return products; // Return all if less than 3 products
+    }
+    const shuffled = [...products].sort(() => 0.5 - Math.random()); // Shuffle array
+    return shuffled.slice(0, 3); // Take first 3 from shuffled array
   };
 
   const addToCart = (product) => {
     // Placeholder for addToCart functionality - adjust as needed
     alert(`${product.name} added to cart! (Homepage Featured)`);
   };
-
 
   return (
     <div className="home-page">
@@ -31,7 +34,7 @@ function HomePage() {
       </div>
       <section className="featured-collection">
         <h2>Featured Collection</h2>
-        <p className="section-description">Discover our hand-picked selection of featured items, showcasing the best of our current collection.</p>
+        <p className="section-description">Discover our hand-picked selection of featured items, showcasing a variety from our collection.</p>
         <div className="products-grid">
           {getFeaturedProducts().map(product => (
             <ProductItem key={product.id} product={product} addToCart={addToCart} />

@@ -4,55 +4,62 @@
     "name": "Elegant Black Dress",
     "description": "A timeless black dress crafted from luxurious crepe fabric. Perfect for evening events or sophisticated day wear.",
     "price": 195,
-    "image": "https://images.unsplash.com/photo-1552902865-b728970ca743?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8ZHJlc3N8fHx8fDE2OTY4MzYwNjY&ixlib=rb-4.0.3&q=80&w=450"
-  },
+    "image": "https://images.unsplash.com/photo-1552902865-b728970ca743?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8ZHJlc3N8fHx8fDE2OT6836066&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Dresses"  },
   {
     "id": 2,
     "name": "Silk Blouse",
     "description": "Ivory silk blouse with a delicate drape. Ideal for layering or wearing on its own for a refined look.",
     "price": 125,
-    "image": "https://images.unsplash.com/photo-1673491083468-79c5ff42d393?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcnR8fHx8fDE2OTY4MzYxMTY&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1673491083468-79c5ff42d393?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8c2hpcnR8fHx8fDE2OT6836116&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Tops"
   },
   {
     "id": 3,
     "name": "Tailored Trousers",
     "description": "High-waisted tailored trousers in a charcoal gray wool blend. Designed for a flattering fit and versatile styling.",
     "price": 150,
-    "image": "https://images.unsplash.com/photo-1618939081474-14faa4044441?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dHJvdXNlcnN8fHx8fDE2OTY4MzYxNDQ&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1618939081474-14faa4044441?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dHJvdXNlcnN8fHx8fDE2OT6836144&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Bottoms"
   },
   {
     "id": 4,
     "name": "Cashmere Sweater",
     "description": "Soft cashmere sweater in a light beige hue. A luxurious staple for cooler days.",
     "price": 250,
-    "image": "https://images.unsplash.com/photo-1547959319-99d0950189dc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8c3dlYXRlcnxlfHx8fHwxNjk2ODM2MTY5&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1547959319-99d0950189dc?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8c3dlYXRlcnxlfHx8fHwxNjk6ODM2MTY5&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Tops"
   },
   {
     "id": 5,
     "name": "Classic Trench Coat",
     "description": "Double-breasted trench coat in a neutral sand color. An essential outerwear piece for transitional weather.",
     "price": 280,
-    "image": "https://images.unsplash.com/photo-1584735935682-564f80bbdd89?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dHJlbmNoY29hdHx8fHx8fDE2OTY4MzYxOTQ&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1584735935682-564f80bbdd89?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dHJlbmNoY29hdHx8fHx8fDE2OT6836194&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Outerwear"
   },
   {
     "id": 6,
     "name": "Leather Tote Bag",
     "description": "Structured leather tote bag in black. Perfect for everyday essentials with a touch of elegance.",
     "price": 320,
-    "image": "https://images.unsplash.com/photo-1612295883677-2a622517c455?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dG90ZWJhZ3xlfHx8fHwxNjk2ODM2MjE5&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1612295883677-2a622517c455?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8dG90ZWJhZ3xlfHx8fHwxNjk6ODM2MjE5&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Accessories"
   },
   {
     "id": 7,
     "name": "Suede Pumps",
     "description": "Classic suede pumps in a deep navy. A versatile footwear option for any sophisticated ensemble.",
     "price": 180,
-    "image": "https://images.unsplash.com/photo-1543539748-a7b942a50246?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8cHVtcHN8fHx8fDE2OTY4MzYyNDQ&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1543539748-a7b942a50246?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8cHVtcHN8fHx8fDE2OT6836244&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Shoes"
   },
   {
     "id": 8,
     "name": "Pearl Earrings",
     "description": "Elegant pearl stud earrings. A subtle yet impactful accessory for a polished finish.",
     "price": 90,
-    "image": "https://images.unsplash.com/photo-1617941285511-dd3999c48834?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8ZWFycmluZ3N8fHx8fDE2OTY4MzYyNjY&ixlib=rb-4.0.3&q=80&w=450"
+    "image": "https://images.unsplash.com/photo-1617941285511-dd3999c48834?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=550&ixid=MnwxfDB8MXxyYW5kb218MHx8ZWFycmluZ3N8fHx8fDE2OT6836266&ixlib=rb-4.0.3&q=80&w=450",
+    "category": "Accessories"
   }
 ]
