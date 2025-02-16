@@ -1,10 +1,11 @@
-/* Modern Global Styles */
+/* Modern Global Styles - Iteration 1 Feedback */
 :root {
   --primary-color: #222;
   --secondary-color: #777;
-  --accent-color: #c0ab6e;
-  --background-color: #fefefe;
-  --light-gray: #eee;
+  --accent-color: #c0ab6e;       /* Muted gold/beige accent color */
+  --accent-hover-color: #a8955d; /* Slightly darker accent for hover */
+  --background-color: #fefefe;   /* Off-white background */
+  --light-gray: #eee;          /* Light gray for borders and subtle backgrounds */
   --font-family-base: 'Roboto', sans-serif;
   --font-family-title: 'Playfair Display', serif;
 }
@@ -49,7 +50,7 @@ h3 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.15em; /* Slightly larger body text as per feedback */
   line-height: 1.7;
   color: var(--secondary-color);
   font-weight: 300;
@@ -69,7 +70,7 @@ a:hover {
 /* Modern Header */
 header {
   background-color: var(--background-color);
-  padding: 25px 30px;
+  padding: 20px 30px; /* Reduced header padding slightly */
   border-bottom: 1px solid var(--light-gray);
   display: flex;
   justify-content: space-between;
@@ -83,7 +84,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2em; /* Slightly reduced header title size */
   font-weight: 500;
   letter-spacing: -0.02em;
 }
@@ -97,7 +98,7 @@ header nav ul {
 }
 
 header nav ul li {
-  margin-left: 30px;
+  margin-left: 25px; /* Slightly reduced nav item spacing */
 }
 
 header nav ul li:first-child {
@@ -110,6 +111,7 @@ header nav ul li a {
   font-size: 1em;
   transition: color 0.3s ease;
   padding: 8px 0;
+  position: relative; /* For hover underline effect */
 }
 
 header nav ul li a:hover,
@@ -118,18 +120,37 @@ header nav ul li a.active {
   text-decoration: none;
 }
 
-/* Cart Icon in Header - Modern Style */
+/* Navigation Hover Effect (underline) */
+header nav ul li a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--accent-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+  width: 100%;
+}
+
+
+/* Refined Cart Icon in Header */
 .cart-icon-link {
   display: flex;
   align-items: center;
   color: var(--primary-color);
   transition: color 0.3s ease;
-  background: none; /* Remove default button background */
-  border: none;     /* Remove default button border */
-  cursor: pointer;  /* Ensure it's a button cursor */
-  padding: 0;       /* Reset padding */
-  font-size: inherit; /* Inherit font size */
-  font-family: inherit;/* Inherit font family */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .cart-icon-link:hover {
@@ -138,10 +159,10 @@ header nav ul li a.active {
 }
 
 .cart-icon {
-  width: 26px;
-  height: 26px;
-  margin-left: 12px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23222"><path d="M9 22c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm6 0c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"/><path fill-rule="evenodd" d="M20.92 9H4.08L3 3h18l-1.08 6zM2.83 11l.94 5H21.23l.94-5H2.83zM4 10h16v7H4v-7zm16 1H4v5h16v-5z"/></svg>');
+  width: 24px; /* Slightly smaller cart icon */
+  height: 24px;
+  margin-left: 8px; /* Reduced spacing */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23222"><path d="M95.1 494.3c-8.6 0-16.5-5.7-18.7-13.9L1.7 288.7c-3.9-14.2 5.1-28.3 19.3-32.2s28.3 5.1 32.2 19.3l74.1 208.7 335-298.5c10.5-9.4 25.8-8.6 35.2 1.9s11.3 24.7 1.9 35.2L113.8 480.4c-4.7 5.3-11.5 8.4-18.7 8.4z"/><path d="M464 96H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM48 176c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48zM48 304c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48z"/></svg>'); /* More detailed cart icon */
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
@@ -168,13 +189,13 @@ footer {
   font-weight: 300;
 }
 
-/* Hero Section (Homepage) - Modernized */
+/* Hero Section (Homepage) - Modernized - Iteration 1 Feedback */
 .hero-section {
   background-size: cover;
   background-position: center;
   color: var(--background-color);
   text-align: center;
-  padding: 200px 20px;
+  padding: 220px 20px; /* Slightly increased padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,7 +209,7 @@ footer {
   content: '';
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay */
 }
 
 .hero-section > * {
@@ -197,35 +218,36 @@ footer {
 }
 
 .hero-section h2 {
-  font-size: 4.5em; /* Increased Hero Title Size */
+  font-size: 4.8em; /* Further Increased Hero Title Size */
   color: var(--background-color);
-  margin-bottom: 15px;
-  font-weight: 600; /* Slightly Bolder Hero Title */
-  letter-spacing: 0.04em; /* Adjusted letter spacing */
+  margin-bottom: 10px; /* Reduced margin below title */
+  font-weight: 600;
+  letter-spacing: 0.05em; /* Adjusted letter spacing */
+  line-height: 1.1; /* Tighter line height for title */
   text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 .hero-section p {
   color: #eee;
-  font-size: 1.4em;
-  max-width: 900px;
-  margin-bottom: 50px;
-  line-height: 1.8;
+  font-size: 1.3em; /* Slightly smaller hero paragraph */
+  max-width: 850px; /* Slightly narrower paragraph */
+  margin-bottom: 40px; /* Reduced margin below paragraph */
+  line-height: 1.7;
   font-weight: 300;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .shop-now-button, .learn-more-button, .submit-button, .add-to-cart-button {
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  padding: 14px 35px;
+  background-color: var(--accent-color); /* Accent color for button background */
+  color: var(--background-color); /* Off-white text */
+  border: none; /* Removed border for filled button */
+  padding: 16px 40px; /* Slightly increased button padding */
   border-radius: 50px;
   font-family: var(--font-family-base);
   font-size: 1.1em;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  box-shadow: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
   text-decoration: none;
   display: inline-block;
   font-weight: 400;
@@ -234,10 +256,11 @@ footer {
 }
 
 .shop-now-button:hover, .learn-more-button:hover, .submit-button:hover, .add-to-cart-button:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  border-color: var(--primary-color);
+  background-color: var(--accent-hover-color); /* Slightly darker accent on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15); /* Slightly stronger shadow on hover */
 }
+
 
 /* Featured Collection & Brand Story (Homepage) - Modernized */
 .featured-collection, .brand-story-section {
@@ -356,7 +379,7 @@ footer {
 }
 
 .add-to-cart-button:hover {
-  background-color: #a8955d;
+  background-color: var(--accent-hover-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
@@ -629,7 +652,7 @@ footer {
   position: fixed;
   top: 0;
   right: 0;
-  width: 350px; /* Adjust width as needed */
+  width: 350px;
   height: 100%;
   background-color: var(--background-color);
   box-shadow: -2px 0 5px rgba(0,0,0,0.1);
@@ -637,11 +660,11 @@ footer {
   overflow-y: auto;
   z-index: 200;
   transition: transform 0.3s ease-out;
-  transform: translateX(100%); /* Hidden by default */
+  transform: translateX(100%);
 }
 
 .cart-drawer.open {
-  transform: translateX(0); /* Slide in when open class is added */
+  transform: translateX(0);
 }
 
 .cart-drawer-header {
@@ -670,7 +693,7 @@ footer {
 }
 
 .cart-drawer-content {
-  padding-right: 5px; /* For scrollbar spacing if needed */
+  padding-right: 5px;
 }
 
 .cart-item {
@@ -716,7 +739,7 @@ footer {
 
 /* Cart Preview Styles - Modernized */
 .cart-preview {
-  margin-top: 60px; /* Adjust if Cart component is still used elsewhere */
+  margin-top: 60px;
   padding: 35px;
   border: 1px solid var(--light-gray);
   border-radius: 12px;
@@ -857,14 +880,14 @@ footer {
   }
 
   .cart-drawer {
-    width: 90%; /* Make cart drawer wider on mobile */
-    max-width: 400px; /* But limit max width */
-    padding: 20px; /* Reduce padding on mobile cart drawer */
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
   }
   .cart-drawer-header h3 {
-    font-size: 1.6em; /* Smaller title in mobile cart drawer */
+    font-size: 1.6em;
   }
   .cart-item {
-    padding: 10px 0; /* Reduce padding in mobile cart items */
+    padding: 10px 0;
   }
 }
