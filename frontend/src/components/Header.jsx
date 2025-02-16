@@ -55,7 +55,6 @@ function Header() {
           <li className="nav-item-dropdown"> {/* Dropdown for Shop */}
             <Link to="/shop">Shop</Link>
             <ul className="dropdown">
-              <li><button onClick={() => handleCategoryNavigation('')}>All Products</button></li> {/* "All Products" link */}
               {categories.map(category => (
                 <li key={category}><button onClick={() => handleCategoryNavigation(category)}>{category}</button></li>
               ))}
