@@ -4,7 +4,7 @@ function ContactPage() {
   return (
     <div className="contact-page">
       <h2>Get In Touch</h2>
-      <p style={{textAlign: 'center', fontSize: '1.1em', color: #777', marginBottom: '70px', letterSpacing: '0.04em'}}>We value your feedback and are here to provide exceptional customer service. Please reach out to us with any questions, inquiries, or feedback using the form below.</p>
+      <p style={{textAlign: 'center', fontSize: '1.1em', color: '#777', marginBottom: '70px', letterSpacing: '0.04em'}}>We value your feedback and are here to provide exceptional customer service. Please reach out to us with any questions, inquiries, or feedback using the form below.</p>
       <form className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Your Name</label>

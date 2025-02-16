@@ -21,7 +21,7 @@ function AboutPage() {
       <section className="founder-section">
         <h3>Meet the Founder</h3>
         <div className="founder-info">
-          <img src="https://via.placeholder.com/150x150/f0f0f0/999?text=Founder" alt="Founder" className="founder-image" />
+          <img src="https://images.unsplash.com/photo-1584440819030-dd842892d915?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=150&ixid=MnwxfDB8MXxyYW5kb218MHx8bG9vaGJvb2t8fHx8fDE2OTY4MzY0NDU&ixlib=rb-4.0.3&q=80&w=150" alt="Founder" className="founder-image" />
           <div className="founder-text">
             <h4>[Founder's Name - *To be added*]</h4>
             <p>[Founder's Name] has always been passionate about design and sustainability. With a background in [Founder's Background - *To be added*], she envisioned August Culture as a brand that could redefine luxury fashion by blending timeless aesthetics with ethical practices. Her dedication to craftsmanship and environmental responsibility is the soul of August Culture.</p>

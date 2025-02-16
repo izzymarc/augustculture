@@ -3,7 +3,7 @@ import React from 'react';
 function HomePage() {
   return (
     <div className="home-page">
-      <div className="hero-section" style={{backgroundImage: `url('https://images.unsplash.com/photo-1604753574463-04349955d247?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1000&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmFzaGlvbnx8fHx8fDE296403776&ixlib=rb-4.0.3&q=80&w=1200')`}}>
+      <div className="hero-section" style={{backgroundImage: `url('https://images.unsplash.com/photo-1523381294911-8cd2cfef102d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1000&ixid=MnwxfDB8MXxyYW5kb218MHx8bG9vaGJvb2t8fHx8fDE2OTY8MzY0MTY&ixlib=rb-4.0.3&q=80&w=1200')`}}>
         <h2>August Culture</h2>
         <p>Explore Timeless Style. Discover our exclusive collections, crafted for the discerning woman seeking sophistication and modern grace.</p>
         <button className="shop-now-button">Shop New Arrivals</button>

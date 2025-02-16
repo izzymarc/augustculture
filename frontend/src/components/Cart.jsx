@@ -1,5 +1,8 @@
 import React from 'react';
 
+// This Cart component is now replaced by CartDrawer
+// Keeping it for reference or potential future use, but it's not used in ShopPage anymore
+
 function Cart({ cart }) {
   return (
     <div className="cart-preview">
@@ -9,7 +12,10 @@ function Cart({ cart }) {
       ) : (
         <ul>
           {cart.map(item => (
-            <li key={item.id}>{item.name} - ${item.price}</li>
+            <li key={item.id}>
+              <span>{item.name}</span>
+              <span>${item.price}</span>
+            </li>
           ))}
         </ul>
       )}
