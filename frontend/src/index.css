@@ -1,4 +1,4 @@
-/* Modern Global Styles - Iteration 1 Feedback - Professional Polish */
+/* Modern Global Styles - Iteration 3 Feedback - Enhanced Professional Polish */
 :root {
   --primary-color: #222;
   --secondary-color: #777;
@@ -6,6 +6,7 @@
   --accent-hover-color: #a8955d; /* Slightly darker accent for hover */
   --background-color: #fefefe;   /* Off-white background */
   --light-gray: #eee;          /* Light gray for borders and subtle backgrounds */
+  --border-color: #ddd;         /* Slightly darker border color for inputs etc. */
   --font-family-base: 'Roboto', sans-serif;
   --font-family-title: 'Playfair Display', serif;
   --toast-background: #e0d8c0; /* Light beige for toast background */
@@ -31,7 +32,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 30px 20px;
+  padding: 35px 20px; /* Slightly increased content padding top */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -39,22 +40,28 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-title);
   color: var(--primary-color);
-  margin-bottom: 15px;
+  margin-bottom: 16px; /* Slightly increased heading margin bottom */
   font-weight: 400;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 2.5em; /* Slightly smaller general h2 */
+  font-size: 3em; /* Further increased general h2 for impact */
+  font-weight: 500;
+  letter-spacing: -0.04em; /* Even tighter letter spacing for headings */
+  margin-bottom: 20px; /* Increased margin below h2 */
 }
 
 h3 {
-  font-size: 1.8em; /* Slightly smaller general h3 */
+  font-size: 2.2em; /* Further increased general h3 */
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px; /* Increased margin below h3 */
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7;
+  font-size: 1.18em; /* Slightly larger paragraph text for readability */
+  line-height: 1.9; /* Further improved line height for paragraph text */
   color: var(--secondary-color);
   font-weight: 300;
 }
@@ -73,7 +80,7 @@ a:hover {
 /* Modern Header */
 header {
   background-color: var(--background-color);
-  padding: 18px 30px; /* Further reduced header padding slightly */
+  padding: 24px 30px; /* Slightly increased header padding vertically */
   border-bottom: 1px solid var(--light-gray);
   display: flex;
   justify-content: space-between;
@@ -87,10 +94,10 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.9em; /* Further reduced header title size */
+  font-size: 2.2em; /* Slightly larger header title size */
   font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-right: 30px; /* Slightly reduced margin to logo */
+  letter-spacing: -0.04em; /* Tighter letter spacing for logo */
+  margin-right: 35px; /* Slightly increased logo margin */
 }
 
 header nav ul {
@@ -102,7 +109,7 @@ header nav ul {
 }
 
 header nav ul li {
-  margin-left: 20px; /* Further reduced nav item spacing */
+  margin-left: 30px; /* Slightly increased nav item spacing */
 }
 
 header nav ul li:first-child {
@@ -112,10 +119,10 @@ header nav ul li:first-child {
 header nav ul li a {
   color: var(--primary-color);
   font-weight: 400;
-  font-size: 0.95em; /* Slightly smaller nav links */
+  font-size: 1.05em; /* Slightly larger nav links */
   transition: color 0.3s ease;
-  padding: 8px 0;
-  position: relative; /* For hover underline effect */
+  padding: 11px 0; /* Slightly increased padding for nav links */
+  position: relative;
 }
 
 header nav ul li a:hover,
@@ -128,7 +135,7 @@ header nav ul li a.active {
 header nav ul li a::after {
   content: '';
   display: block;
-  height: 1.5px; /* Thinner underline */
+  height: 2.5px; /* Slightly thicker underline */
   background-color: var(--accent-color);
   position: absolute;
   bottom: 0;
@@ -140,6 +147,55 @@ header nav ul li a::after {
 header nav ul li a:hover::after,
 header nav ul li a.active::after {
   width: 100%;
+}
+
+/* Dropdown Styles */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--background-color);
+  border: 1px solid var(--light-gray);
+  border-top: none;
+  padding: 18px 0; /* Increased padding in dropdown */
+  list-style: none;
+  margin: 0;
+  width: auto;
+  min-width: 200px; /* Increased min-width for dropdown */
+  display: none;
+  z-index: 10;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.06); /* Added subtle shadow to dropdown */
+}
+
+.nav-item-dropdown:hover .dropdown,
+.nav-item-dropdown .dropdown.show {
+  display: block;
+}
+
+.nav-item-dropdown .dropdown li {
+  margin: 0;
+}
+
+.nav-item-dropdown .dropdown li button {
+  display: block;
+  width: 100%;
+  padding: 13px 24px; /* Increased padding in dropdown buttons */
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.05em; /* Slightly larger dropdown font size */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.nav-item-dropdown .dropdown li button:hover {
+  background-color: var(--light-gray);
+  color: var(--primary-color);
 }
 
 
@@ -164,10 +220,10 @@ header nav ul li a.active::after {
 }
 
 .cart-icon {
-  width: 22px; /* Even smaller cart icon */
-  height: 22px;
-  margin-left: 6px; /* Further reduced spacing */
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23222"><path d="M95.1 494.3c-8.6 0-16.5-5.7-18.7-13.9L1.7 288.7c-3.9-14.2 5.1-28.3 19.3-32.2s28.3 5.1 32.2 19.3l74.1 208.7 335-298.5c10.5-9.4 25.8-8.6 35.2 1.9s11.3 24.7 1.9 35.2L113.8 480.4c-4.7 5.3-11.5 8.4-18.7 8.4z"/><path d="M464 96H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM48 176c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48zM48 304c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48z"/></svg>'); /* Even smaller cart icon */
+  width: 25px; /* Slightly larger cart icon */
+  height: 25px;
+  margin-left: 9px; /* Slightly increased spacing */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23222"><path d="M95.1 494.3c-8.6 0-16.5-5.7-18.7-13.9L1.7 288.7c-3.9-14.2 5.1-28.3 19.3-32.2s28.3 5.1 32.2 19.3l74.1 208.7 335-298.5c10.5-9.4 25.8-8.6 35.2 1.9s11.3 24.7 1.9 35.2L113.8 480.4c-4.7 5.3-11.5 8.4-18.7 8.4z"/><path d="M464 96H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM48 176c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48zM48 304c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H48z"/></svg>'); /* Slightly larger cart icon */
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
@@ -183,13 +239,13 @@ header nav ul li a.active::after {
 /* Cart Count Badge */
 .cart-count {
   position: absolute;
-  top: -6px; /* Adjust position */
-  right: -6px;
+  top: -7px; /* Slightly adjusted position */
+  right: -7px;
   background-color: var(--accent-color);
   color: var(--background-color);
   border-radius: 50%;
-  padding: 2px 5px; /* Slightly smaller padding */
-  font-size: 0.75em; /* Even smaller font size */
+  padding: 4px 7px; /* Slightly larger padding for cart count */
+  font-size: 0.85em; /* Slightly larger font size for cart count */
   font-weight: 500;
 }
 
@@ -197,37 +253,37 @@ header nav ul li a.active::after {
 /* Modern Footer */
 footer {
   background-color: var(--background-color);
-  padding: 25px 30px; /* Reduced footer padding */
+  padding: 35px 30px; /* Slightly increased footer padding vertically */
   text-align: center;
   color: var(--secondary-color);
   border-top: 1px solid var(--light-gray);
   max-width: 1200px;
   margin: 0 auto;
-  font-size: 0.9em; /* Slightly smaller footer text */
+  font-size: 1em; /* Slightly larger footer text */
   font-weight: 300;
 }
 
-/* Hero Section (Homepage) - Modernized - Iteration 2 Polish */
+/* Hero Section (Homepage) - Modernized - Iteration 3 Polish */
 .hero-section {
   background-size: cover;
   background-position: center;
   color: var(--background-color);
   text-align: center;
-  padding: 250px 20px; /* Further Increased padding for a grander hero */
+  padding: 300px 20px; /* Further Increased padding for a grander hero */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin-bottom: 3.5em; /* Increased margin for more separation */
+  margin-bottom: 4.5em; /* Increased margin for more separation */
 }
 
 .hero-section::before {
   content: '';
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  background-color: rgba(0, 0, 0, 0.35); /* Slightly darker overlay */
+  background-color: rgba(0, 0, 0, 0.38); /* Slightly darker overlay */
 }
 
 .hero-section > * {
@@ -236,21 +292,21 @@ footer {
 }
 
 .hero-section h2 {
-  font-size: 5em; /* Even Larger Hero Title Size */
+  font-size: 6em; /* Even Larger Hero Title Size */
   color: var(--background-color);
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased margin below hero title */
   font-weight: 600;
-  letter-spacing: 0.06em; /* Further Adjusted letter spacing */
-  line-height: 1.05; /* Even Tighter line height for title */
-  text-shadow: 3px 3px 7px rgba(0,0,0,0.4); /* More pronounced text shadow */
+  letter-spacing: 0.1em; /* Further Adjusted letter spacing */
+  line-height: 1.0; /* Even Tighter line height for title */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.4); /* More pronounced text shadow */
 }
 
 .hero-section p {
   color: #eee;
-  font-size: 1.35em; /* Slightly tweaked hero paragraph size */
-  max-width: 880px; /* Slightly adjusted paragraph width */
-  margin-bottom: 55px; /* Increased margin for button space */
-  line-height: 1.7;
+  font-size: 1.45em; /* Slightly tweaked hero paragraph size */
+  max-width: 960px; /* Slightly adjusted paragraph width */
+  margin-bottom: 65px; /* Increased margin for button space */
+  line-height: 1.75; /* Slightly increased line height for hero paragraph */
   font-weight: 300;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
@@ -259,17 +315,17 @@ footer {
   background-color: var(--background-color); /* Off-white button background now */
   color: var(--primary-color); /* Dark text */
   border: 2px solid var(--primary-color);
-  padding: 15px 38px; /* Slightly tweaked button padding */
+  padding: 17px 42px; /* Slightly tweaked button padding */
   border-radius: 50px;
   font-family: var(--font-family-base);
-  font-size: 1.05em; /* Slightly tweaked button text size */
+  font-size: 1.15em; /* Slightly tweaked button text size */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added subtle base shadow */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* Added subtle base shadow */
   text-decoration: none;
   display: inline-block;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em; /* Slightly increased letter spacing for buttons */
   outline: none;
 }
 
@@ -277,39 +333,40 @@ footer {
   background-color: var(--primary-color); /* Dark background on hover */
   color: var(--background-color); /* Off-white text on hover */
   border-color: var(--primary-color);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Slightly stronger shadow on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.16); /* Slightly stronger shadow on hover */
   transform: translateY(-2px); /* Slight lift on hover */
 }
 
 
 /* Featured Collection & Brand Story (Homepage) - Modernized - Polish */
 .featured-collection, .brand-story-section {
-  padding: 70px 0; /* Further Increased padding for more visual space */
+  padding: 90px 0; /* Further Increased padding for more visual space */
   text-align: center;
 }
 
 .featured-collection h2, .brand-story-section h2 {
-  margin-bottom: 30px;
-  font-size: 2.7em; /* Slightly smaller section titles */
+  margin-bottom: 40px; /* Increased margin below section titles */
+  font-size: 3.1em; /* Slightly smaller section titles */
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .section-description {
   color: var(--secondary-color);
-  margin-bottom: 45px; /* Slightly reduced margin below section description */
-  max-width: 880px; /* Slightly narrower description */
+  margin-bottom: 55px; /* Slightly reduced margin below section description */
+  max-width: 960px; /* Slightly narrower description */
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.1em; /* Slightly smaller description text */
-  line-height: 1.7;
+  font-size: 1.25em; /* Slightly smaller description text */
+  line-height: 1.85; /* Slightly improved line-height for section description */
   font-weight: 300;
 }
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* Slightly wider product items */
-  gap: 35px; /* Increased gap between product items */
-  padding: 30px; /* Increased padding around product grid */
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Slightly wider product items */
+  gap: 45px; /* Increased gap between product items */
+  padding: 45px; /* Increased padding around product grid */
   max-width: 1200px; /* Ensure grid stays within content max-width */
   margin: 0 auto;    /* Center the grid on the page */
 }
@@ -319,15 +376,15 @@ footer {
   background-color: var(--background-color);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 9px rgba(0,0,0,0.07); /* Slightly stronger shadow for product items */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.09); /* Slightly stronger shadow for product items */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .product-item:hover {
-  transform: translateY(-4px); /* Slightly more pronounced hover translation */
-  box-shadow: 0 9px 18px rgba(0,0,0,0.14); /* Slightly stronger hover shadow */
+  transform: translateY(-6px); /* Slightly more pronounced hover translation */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.16); /* Slightly stronger hover shadow */
 }
 
 .product-item img {
@@ -339,12 +396,12 @@ footer {
 }
 
 .product-item img:hover {
-  opacity: 0.92; /* Slightly less faded image on hover */
+  opacity: 0.88; /* Slightly less faded image on hover */
 }
 
 
 .product-details {
-  padding: 25px; /* Slightly increased padding in product details */
+  padding: 35px; /* Slightly increased padding in product details */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -353,34 +410,36 @@ footer {
 
 .product-item h3 {
   margin-top: 0;
-  margin-bottom: 12px; /* Slightly reduced margin below product name */
-  font-size: 1.5em; /* Slightly smaller product name */
+  margin-bottom: 18px; /* Slightly reduced margin below product name */
+  font-size: 1.7em; /* Slightly smaller product name */
   font-weight: 400;
   color: var(--primary-color);
+  letter-spacing: -0.02em;
+  line-height: 1.3; /* Slightly tighter line height for product name */
 }
 
 .product-details .description {
   color: var(--secondary-color);
-  margin-bottom: 18px; /* Slightly reduced margin below description */
+  margin-bottom: 22px; /* Slightly reduced margin below description */
   flex-grow: 1;
-  font-size: 1em;
-  line-height: 1.6; /* Slightly tighter line height for description */
+  font-size: 1.1em;
+  line-height: 1.75; /* Slightly tighter line height for description */
   font-weight: 300;
 }
 
 .product-details .price {
-  font-size: 1.3em; /* Slightly smaller price text */
+  font-size: 1.5em; /* Slightly smaller price text */
   font-weight: 500;
   color: var(--primary-color);
-  margin-bottom: 18px; /* Slightly reduced margin below price */
+  margin-bottom: 22px; /* Slightly reduced margin below price */
 }
 
 .product-meta {
-  font-size: 0.85em; /* Slightly smaller meta text */
+  font-size: 0.95em; /* Slightly smaller meta text */
   color: #888; /* Slightly lighter meta color */
-  margin-top: 10px; /* Slightly increased margin above meta */
+  margin-top: 14px; /* Slightly increased margin above meta */
   border-top: 1px solid #f0f0f0; /* Lighter border color */
-  padding-top: 10px; /* Slightly increased padding above meta */
+  padding-top: 14px; /* Slightly increased padding above meta */
 }
 
 /* Add to Cart Button - Modern */
@@ -388,80 +447,81 @@ footer {
   background-color: var(--accent-color);
   color: var(--background-color);
   border: none;
-  padding: 11px 28px; /* Further reduced button padding */
+  padding: 13px 32px; /* Further reduced button padding */
   border-radius: 40px; /* Even less rounded button */
   font-family: var(--font-family-base);
-  font-size: 0.9em; /* Even smaller button text */
+  font-size: 1em; /* Even smaller button text */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06); /* Even more subtle shadow */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.09); /* Even more subtle shadow */
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   outline: none;
-  margin-top: 12px; /* Slightly reduced margin above button */
+  margin-top: 16px; /* Slightly reduced margin above button */
 }
 
 .add-to-cart-button:hover {
   background-color: var(--accent-hover-color);
   transform: translateY(-1px); /* Reduced hover translation */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Even more subtle hover shadow */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.14); /* Even more subtle hover shadow */
 }
 
 
 /* About Page - Modernized */
 .about-page {
-  padding: 50px 30px;
+  padding: 70px 30px; /* Increased padding for About Page */
 }
 
 .about-page h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 3em;
+  margin-bottom: 50px; /* Increased margin for About Page heading */
+  font-size: 3.5em; /* Slightly larger About Page heading */
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .about-page p {
-  margin-bottom: 30px;
-  font-size: 1.15em;
-  line-height: 1.8;
+  margin-bottom: 40px; /* Increased margin for About Page paragraphs */
+  font-size: 1.25em; /* Slightly larger About Page paragraph text */
+  line-height: 2.0; /* Improved line height for About Page paragraphs */
   color: var(--secondary-color);
   font-weight: 300;
-  max-width: 900px;
+  max-width: 1000px; /* Slightly wider max-width for About Page text */
   margin-left: auto;
   margin-right: auto;
 }
 
 .about-page ul {
-  padding-left: 25px;
-  margin-bottom: 30px;
+  padding-left: 35px; /* Increased padding for About Page lists */
+  margin-bottom: 40px; /* Increased margin for About Page lists */
 }
 
 .about-page ul li {
-  font-size: 1.15em;
-  line-height: 1.8;
+  font-size: 1.25em; /* Slightly larger About Page list text */
+  line-height: 2.0; /* Improved line height for About Page lists */
   font-weight: 300;
 }
 
 .founder-section {
-  margin-top: 70px;
+  margin-top: 90px; /* Increased margin for Founder Section */
   text-align: center;
 }
 
 .founder-info {
   display: flex;
   align-items: center;
-  max-width: 950px;
-  margin: 40px auto;
-  padding: 40px;
+  max-width: 1050px; /* Slightly wider max-width for Founder Info */
+  margin: 60px auto; /* Increased margin for Founder Info */
+  padding: 60px; /* Increased padding for Founder Info */
   background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.07); /* Slightly stronger shadow for Founder Info */
 }
 
 .founder-image {
   border-radius: 50%;
-  margin-right: 50px;
-  max-width: 160px;
+  margin-right: 70px; /* Increased margin for Founder Image */
+  max-width: 200px; /* Slightly larger Founder Image */
 }
 
 .founder-text {
@@ -470,15 +530,17 @@ footer {
 
 .founder-text h4 {
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 2em;
+  margin-bottom: 30px; /* Increased margin for Founder Name */
+  font-size: 2.4em; /* Slightly larger Founder Name */
   color: var(--primary-color);
   font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2; /* Tighter line height for founder name */
 }
 
 .founder-text p {
-  font-size: 1.15em;
-  line-height: 1.8;
+  font-size: 1.25em; /* Slightly larger Founder Text */
+  line-height: 2.0; /* Improved line height for Founder Text */
   color: var(--secondary-color);
   font-weight: 300;
 }
@@ -486,46 +548,47 @@ footer {
 
 /* Contact Page - Modernized */
 .contact-page {
-  padding: 50px 30px;
+  padding: 70px 30px; /* Increased padding for Contact Page */
   text-align: center;
 }
 
 .contact-page h2 {
-  margin-bottom: 35px;
-  font-size: 3em;
+  margin-bottom: 45px; /* Increased margin for Contact Page heading */
+  font-size: 3.5em; /* Slightly larger Contact Page heading */
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .contact-form {
-  max-width: 750px;
-  margin: 50px auto;
-  padding: 45px;
+  max-width: 850px; /* Slightly wider max-width for Contact Form */
+  margin: 70px auto; /* Increased margin for Contact Form */
+  padding: 60px; /* Increased padding for Contact Form */
   background-color: var(--background-color);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08); /* Slightly stronger shadow for Contact Form */
   display: flex;
   flex-direction: column;
 }
 
 .form-group {
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* Increased margin for Form Groups */
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 16px; /* Increased margin for Form Labels */
   color: var(--primary-color);
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Slightly larger Form Label text */
 }
 
 .form-group input, .form-group textarea {
   width: 100%;
-  padding: 14px;
-  border: 1px solid var(--light-gray);
+  padding: 18px; /* Increased padding for Form Inputs */
+  border: 1px solid var(--border-color); /* Slightly darker border for inputs */
   border-radius: 8px;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Slightly larger Form Input text */
   font-family: inherit;
   box-sizing: border-box;
   outline: none;
@@ -534,26 +597,27 @@ footer {
 
 .form-group input:focus, .form-group textarea:focus {
   border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2); /* Subtle focus ring */
 }
 
 
 .form-group textarea {
   resize: vertical;
-  min-height: 160px;
+  min-height: 200px; /* Slightly larger textarea height */
 }
 
 .submit-button {
   align-self: center;
-  margin-top: 30px;
-  padding: 14px 35px;
-  font-size: 1.1em;
+  margin-top: 40px; /* Increased margin for Submit Button */
+  padding: 17px 42px; /* Slightly larger Submit Button padding */
+  font-size: 1.2em; /* Slightly larger Submit Button text */
 }
 
 .contact-page address {
-  margin-top: 50px;
+  margin-top: 70px; /* Increased margin for Contact Address */
   color: var(--secondary-color);
-  line-height: 1.8;
-  font-size: 1.1em;
+  line-height: 2.0; /* Improved line height for Contact Address */
+  font-size: 1.2em; /* Slightly larger Contact Address text */
   font-weight: 300;
 }
 .contact-page address a {
@@ -563,33 +627,34 @@ footer {
 
 /* Lookbook Page - Modernized */
 .lookbook-page {
-  padding: 50px 30px;
+  padding: 70px 30px; /* Increased padding for Lookbook Page */
   text-align: center;
 }
 
 .lookbook-page h2 {
-  margin-bottom: 35px;
-  font-size: 3em;
+  margin-bottom: 45px; /* Increased margin for Lookbook Page heading */
+  font-size: 3.5em; /* Slightly larger Lookbook Page heading */
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .lookbook-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 45px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Slightly wider Lookbook items */
+  gap: 55px; /* Increased gap for Lookbook items */
+  padding: 55px; /* Increased padding for Lookbook grid */
 }
 
 .lookbook-item {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.04);
+  box-shadow: 0 7px 14px rgba(0,0,0,0.06); /* Slightly stronger shadow for Lookbook items */
   transition: transform 0.3s ease;
 }
 
 .lookbook-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Slightly stronger hover shadow for Lookbook items */
 }
 
 .lookbook-item img {
@@ -601,38 +666,39 @@ footer {
 }
 
 .lookbook-item img:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 
 .lookbook-caption {
-  padding: 30px;
+  padding: 40px; /* Increased padding for Lookbook captions */
   text-align: left;
   background-color: var(--background-color);
   color: var(--secondary-color);
-  font-size: 1.05em;
-  line-height: 1.7;
+  font-size: 1.15em; /* Slightly larger Lookbook caption text */
+  line-height: 1.85; /* Improved line height for Lookbook captions */
   font-weight: 300;
 }
 
 
 /* Shop Page Styles - Modernized */
 .shop-page {
-  padding: 50px 30px;
+  padding: 70px 30px; /* Increased padding for Shop Page */
   text-align: center;
 }
 
 .shop-page h2 {
-  margin-bottom: 35px;
-  font-size: 3em;
+  margin-bottom: 45px; /* Increased margin for Shop Page heading */
+  font-size: 3.5em; /* Slightly larger Shop Page heading */
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .shop-controls {
   display: flex;
   justify-content: space-between; /* Space out category filter and sort */
   align-items: center; /* Vertically align filters */
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* Increased margin for Shop Controls */
   padding-right: 40px; /* Match padding with products grid */
   padding-left: 40px;
 }
@@ -643,11 +709,11 @@ footer {
   position: fixed;
   top: 0;
   right: 0;
-  width: 350px; /* Adjust width as needed */
+  width: 400px; /* Slightly wider Cart Drawer */
   height: 100%;
   background-color: var(--background-color);
-  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-  padding: 30px;
+  box-shadow: -2px 0 7px rgba(0,0,0,0.13); /* Slightly stronger shadow for Cart Drawer */
+  padding: 40px; /* Increased padding for Cart Drawer */
   overflow-y: auto;
   z-index: 200;
   transition: transform 0.3s ease-out;
@@ -664,12 +730,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increased margin for Cart Drawer header */
 }
 
 .cart-drawer-header h3 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2.2em; /* Slightly larger Cart Drawer header text */
+  letter-spacing: -0.02em;
 }
 
 .cart-drawer-close-button {
@@ -695,7 +762,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 20px 0; /* Increased padding for Cart Items */
   border-bottom: 1px dotted var(--light-gray);
 }
 
@@ -704,34 +771,67 @@ footer {
 }
 
 .cart-total {
-  margin-top: 25px;
-  padding-top: 25px;
+  margin-top: 35px; /* Increased margin for Cart Total */
+  padding-top: 35px; /* Increased padding for Cart Total */
   border-top: 2px solid var(--light-gray);
   text-align: right;
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1.4em; /* Slightly larger Cart Total text */
   color: var(--primary-color);
+}
+
+.cart-drawer-footer {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid var(--light-gray);
+  text-align: center; /* Center align the button in the footer */
+}
+
+.view-cart-button {
+  display: inline-block; /* Ensure button respects text-align: center */
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 13px 32px;
+  border-radius: 40px;
+  font-family: var(--font-family-base);
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.09);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  outline: none;
+  text-decoration: none; /* Prevent default link underline */
+}
+
+.view-cart-button:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.14);
+  transform: translateY(-1px);
 }
 
 
 /* Cart Preview Styles - Modernized */
 .cart-preview {
-  margin-top: 60px; /* Adjust if Cart component is still used elsewhere */
-  padding: 35px;
+  margin-top: 80px; /* Increased margin for Cart Preview */
+  padding: 45px; /* Increased padding for Cart Preview */
   border: 1px solid var(--light-gray);
   border-radius: 12px;
   background-color: var(--background-color);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.06); /* Slightly stronger shadow for Cart Preview */
   text-align: left;
 }
 
 .cart-preview h3 {
-  font-size: 2em;
+  font-size: 2.4em; /* Slightly larger Cart Preview heading */
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 35px; /* Increased margin for Cart Preview heading */
   text-align: center;
   color: var(--primary-color);
   font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .cart-preview ul {
@@ -740,12 +840,12 @@ footer {
 }
 
 .cart-preview ul li {
-  padding: 15px 0;
+  padding: 20px 0; /* Increased padding for Cart Preview list items */
   border-bottom: 1px dotted var(--light-gray);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1em;
+  font-size: 1.2em; /* Slightly larger Cart Preview list text */
   font-weight: 300;
 }
 
@@ -754,12 +854,12 @@ footer {
 }
 
 .cart-total {
-  margin-top: 25px;
-  padding-top: 25px;
+  margin-top: 35px; /* Increased margin for Cart Total in Preview */
+  padding-top: 35px; /* Increased padding for Cart Total in Preview */
   border-top: 2px solid var(--light-gray);
   text-align: right;
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: 1.4em; /* Slightly larger Cart Total text in Preview */
   color: var(--primary-color);
 }
 
@@ -767,17 +867,17 @@ footer {
 /* Responsive Design Adjustments - Modernized */
 @media (max-width: 768px) {
   .content {
-    padding: 20px 15px;
+    padding: 25px 15px; /* Adjusted content padding for mobile */
   }
 
   header {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 28px 20px; /* Increased vertical padding for header on mobile */
   }
   header h1 {
-    margin-bottom: 15px;
-    font-size: 2em;
+    margin-bottom: 20px; /* Increased margin below logo on mobile */
+    font-size: 2.4em; /* Slightly larger logo on mobile */
     margin-right: 0; /* Reset margin for mobile */
   }
   header nav ul {
@@ -786,54 +886,60 @@ footer {
   }
   header nav ul li {
     margin-left: 0;
-    margin-top: 15px;
+    margin-top: 20px; /* Increased margin for nav items on mobile */
   }
   header nav ul li a {
-    font-size: 1em;
+    font-size: 1.15em; /* Slightly larger nav links on mobile */
+    padding: 13px 0; /* Slightly increased padding for nav links on mobile */
   }
 
   .hero-section {
-    padding: 150px 20px;
+    padding: 200px 20px; /* Adjusted hero padding for mobile */
   }
   .hero-section h2 {
-    font-size: 3.2em;
+    font-size: 3.8em; /* Larger hero title on mobile */
+    margin-bottom: 18px;
   }
   .hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
+    font-size: 1.3em; /* Slightly larger hero paragraph on mobile */
+    margin-bottom: 50px; /* Increased margin for hero paragraph on mobile */
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    padding: 25px;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider product grid items on mobile */
+    padding: 35px; /* Adjusted product grid padding for mobile */
+    gap: 40px; /* Adjusted product grid gap for mobile */
   }
 
   .product-details {
-    padding: 20px;
+    padding: 30px; /* Adjusted product details padding for mobile */
   }
   .product-item h3 {
-    font-size: 1.5em;
+    font-size: 1.7em; /* Slightly larger product name on mobile */
   }
   .product-details .price {
-    font-size: 1.3em;
+    font-size: 1.5em; /* Slightly larger product price on mobile */
   }
 
   .founder-info {
     flex-direction: column;
-    padding: 30px;
+    padding: 45px; /* Adjusted founder info padding for mobile */
   }
   .founder-image {
     margin-right: 0;
-    margin-bottom: 25px;
-    max-width: 140px;
+    margin-bottom: 35px; /* Increased margin below founder image on mobile */
+    max-width: 180px; /* Adjusted max width for founder image on mobile */
   }
   .founder-text h4 {
-    font-size: 1.9em;
+    font-size: 2.2em; /* Adjusted founder name size on mobile */
+    margin-bottom: 25px; /* Adjusted margin below founder name on mobile */
+  }
+  .founder-text p {
+    font-size: 1.2em; /* Adjusted founder text size on mobile */
   }
 
   .contact-form {
-    padding: 35px;
+    padding: 45px; /* Adjusted contact form padding on mobile */
   }
   .form-group label,
   .form-group input,
@@ -844,29 +950,29 @@ footer {
   .cart-preview h3,
   .cart-preview ul li,
   .cart-total {
-    font-size: 1em;
+    font-size: 1.15em; /* Slightly larger form elements and text on mobile */
   }
 
   .lookbook-grid {
-    padding: 25px;
-    gap: 30px;
+    padding: 35px; /* Adjusted lookbook grid padding on mobile */
+    gap: 40px; /* Adjusted lookbook grid gap on mobile */
   }
 
   .cart-preview {
-    padding: 25px;
-    margin-top: 45px;
+    padding: 35px; /* Adjusted cart preview padding on mobile */
+    margin-top: 55px; /* Adjusted cart preview margin-top on mobile */
   }
 
   .cart-drawer {
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
+    width: 96%; /* Wider cart drawer on mobile */
+    max-width: 480px; /* Increased max width for cart drawer on mobile */
+    padding: 35px; /* Adjusted cart drawer padding on mobile */
   }
   .cart-drawer-header h3 {
-    font-size: 1.6em;
+    font-size: 1.9em; /* Adjusted cart drawer header size on mobile */
   }
   .cart-item {
-    padding: 10px 0;
+    padding: 16px 0; /* Adjusted cart item padding on mobile */
   }
 
   .shop-controls {
@@ -874,8 +980,9 @@ footer {
     align-items: flex-start; /* Align items to the start on mobile */
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 30px; /* Reduced margin for shop controls on mobile */
   }
   .sort-control {
-    margin-top: 10px; /* Add margin between stacked controls */
+    margin-top: 14px; /* Added margin between stacked controls on mobile */
   }
 }

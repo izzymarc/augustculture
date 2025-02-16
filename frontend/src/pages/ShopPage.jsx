@@ -6,7 +6,7 @@ import SortProducts from '../components/SortProducts';
 function ShopPage() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(''); // Initialize to empty string for "All Categories" default
   const [sortOrder, setSortOrder] = useState('default'); // Default, Price Low to High, Price High to Low
   const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState(() => {
