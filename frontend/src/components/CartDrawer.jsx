@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
-function CartDrawer({ cart, onClose, isOpen, setCart }) { // Added setCart prop
+function CartDrawer({ cart, onClose, isOpen, setCart }) {
 
   if (!isOpen) {
     return null;
@@ -19,7 +20,7 @@ function CartDrawer({ cart, onClose, isOpen, setCart }) { // Added setCart prop
   const decrementQuantity = (item) => {
     const updatedCart = cart.map(cartItem => {
       if (cartItem.id === item.id) {
-        return { ...cartItem, quantity: Math.max(1, (cartItem.quantity || 1) - 1) }; // Ensure quantity doesn't go below 1
+        return { ...cartItem, quantity: Math.max(1, (cartItem.quantity || 1) - 1) };
       }
       return cartItem;
     });
@@ -73,6 +74,11 @@ function CartDrawer({ cart, onClose, isOpen, setCart }) { // Added setCart prop
           </div>
         )}
       </div>
+      {cart.length > 0 && (
+        <div className="cart-drawer-footer"> {/* Cart Drawer Footer */}
+          <Link to="/cart" className="view-cart-button">View Full Cart</Link> {/* "View Cart" Button */}
+        </div>
+      )}
     </div>
   );
 }
